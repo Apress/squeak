@@ -1,0 +1,31 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 12"
+
+"12-1"
+pattern
+
+	self go: 100.
+	self turnLeft: 90.
+	self go: 100.
+	self turnLeft: 90.
+	self go: 50.
+	self turnLeft: 90.
+	self go: 50.
+	self turnLeft: 90.
+	self go: 100.
+	self turnLeft: 90.
+	self go: 25.
+	self turnLeft: 90.
+	self go: 25.
+	self turnLeft: 90.
+	self go: 50.
+	
+
+"12-2"
+frame50
+
+    4 timesRepeat:
+	 [ self pattern.
+        self go: 50 ]

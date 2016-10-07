@@ -1,0 +1,64 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 10"
+
+| pica length angle |
+pica := Bot new.
+length := 5.
+angle := 91.
+100 timesRepeat: 
+         [ pica go: length.
+         pica turnLeft: angle.
+         length := length + 3 ]
+         
+"10-2"
+         
+| pica length |
+pica := Bot new.
+length := 5.
+9 timesRepeat: 
+	[ pica go: length.
+	pica turnLeft: 90.
+	pica go: length.
+	pica turnRight: 90.
+	length := length + 5 ]		
+
+"10-3"
+| pica length |
+pica := Bot new.
+length := 5.
+50 timesRepeat: 
+        [ pica go: length.
+	 pica turnLeft: 90.
+	 length := length + 5 ] 
+        
+| pica length |
+pica := Bot new.
+length := 5.
+60 timesRepeat: 
+        [ pica go: length.
+	 pica turnLeft: 121.
+	 length := length + 5 ]         
+        
+        
+"10-4"
+| tmp pica |
+pica := Bot new.
+tmp := 10.
+10 timesRepeat: 
+		[ 4 timesRepeat: 
+		        [ pica go: tmp.
+		        pica turnLeft: 90 ].
+		tmp := tmp + 10 ]
+
+
+"having arguments and composition is really powerful and not been able to use them 
+make really the code tedious....so read the next chapters to get the full power."
+
+"10-5 look in chapter 16"
+
+"10-6 look in chapter 16"
+
+"10-7 look in chapter 16"
+

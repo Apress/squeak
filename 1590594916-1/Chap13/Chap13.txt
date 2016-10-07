@@ -1,0 +1,69 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 13"
+
+"13-1"
+
+pattern4
+
+    4 timesRepeat:
+	 [ self pattern.
+        self go: 50 ]
+        
+        
+"13-2"
+tiltedPattern
+
+   9 timesRepeat: 
+	     [ self pattern. 
+            self turnRight: 10. 
+            self go: 50 ]
+
+
+"13-3"
+doubleFrame
+
+    8 timesRepeat: 
+		[ self pattern. 
+        	self turnLeft: 45. 
+        	self go: 100]
+
+"13-4"
+squareL
+
+	4 timesRepeat: 
+		[ self go: 100.
+		self turnLeft: 90]
+
+
+box
+
+	4 timesRepeat: 
+			[ self squareL.
+              	self turnLeft: 90]
+
+
+
+separated
+	4 timesRepeat: 
+		[ self compSquareL.
+              self turnLeft: 90. 
+		self go: 10]
+
+
+"13-6"
+star
+
+	8 timesRepeat: 
+		[ self compSquareL.
+	       self turnLeft: 45 ]
+
+
+star3
+	
+      12 timesRepeat: 
+		[ self compSquareL.
+              self turnLeft: 30.
+              self go: 10 ]
+

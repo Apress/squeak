@@ -1,0 +1,112 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 8"
+
+"here I'm using method since else this would be really tedious"
+
+varALetterHeight: height width: width middle: middle
+
+
+	self north.
+	self go: height.
+	self east.
+	self go: width.
+	self south.
+	self go: height.
+
+	self west.
+	self jump: width.
+	self north.
+	self go: middle.
+	
+	self east.
+	self go: width.
+	self south.
+	self go: middle.
+
+| pica |
+pica := Bot new.
+	pica west.
+	pica jump: 300.
+	pica varALetterHeight: 120 width: 100 middle: 50.
+	pica east.
+	
+	pica jump: 10.
+	pica varALetterHeight: 120 width: 50 middle: 50.
+	pica east.
+	
+	pica jump: 10.
+	pica varALetterHeight: 150 width: 30 middle: 50.
+	pica east.
+
+	pica jump: 10.
+	pica varALetterHeight: 70 width: 100 middle: 40.
+	pica east.
+	
+	pica jump: 10.
+	pica varALetterHeight: 170 width: 10 middle: 70.
+	pica east.
+
+	pica jump: 10.
+	pica varALetterHeight: 150 width: 30 middle: 10.
+	pica east.
+
+	pica jump: 10.
+	pica varALetterHeight: 70 width: 10 middle: 50.
+
+"A 100"
+| pica |
+pica := Bot new.
+pica north.
+pica go: 100.
+pica east.
+pica go: 70.
+pica south.
+pica go: 100.
+pica west.
+pica jump: 70.
+pica north.
+pica go: 60.
+pica east.
+pica go: 70
+
+"8-4 golden rectangle"
+| pica height width|
+pica := Bot new.
+width := 100.
+height := width * ((1 + 5 sqrt)/2).
+pica go: width.
+pica turnLeft: 90.
+pica go: height.
+pica turnLeft: 90.
+pica go: width.
+pica turnLeft: 90.
+pica go: height.
+pica turnLeft: 90.
+pica go: width.
+pica turnLeft: 90.
+pica go: width.
+pica turnLeft: 90.
+pica go: width
+
+"8-6 Pyramid"
+varPyramid
+
+| pica |
+pica := Bot new.
+5 timesRepeat: 
+       [ pica north.
+       pica go: 20.
+       pica east.
+       pica go: 20 ].
+5 timesRepeat: 
+       [ pica go: 20.
+       pica south.
+       pica go: 20.
+       pica east ].
+pica west.
+pica go: 400.
+
+
+

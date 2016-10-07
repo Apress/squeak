@@ -1,0 +1,160 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 7"
+
+"Turning Squares...I always thought that you would love to see how to make the first picture...  :)"
+
+
+| pica |
+ pica := Bot new.
+ pica west; jump: 300; east.
+ pica go: 70.
+ pica turnLeft: 180.
+ pica go: 70.
+ pica turnLeft: 180.
+ pica jump: 150.
+ 2 timesRepeat: 
+       [ pica go: 70.
+       pica turnLeft: 180.
+       pica go: 70.
+       pica turnLeft: 180.
+       pica turnLeft: 30 ].
+ 
+ pica east.
+ pica jump: 150.
+ 3 timesRepeat: 
+       [ pica go: 70.
+       pica turnLeft: 180.
+       pica go: 70.
+       pica turnLeft: 180.
+       pica turnLeft: 30 ].
+ pica east.
+ pica jump: 150.
+ 
+12 timesRepeat: 
+       [ pica go: 70.
+       pica turnLeft: 180.
+       pica go: 70.
+       pica turnLeft: 180.
+       pica turnLeft: 30 ]
+       
+"7-1"
+| pica |
+ pica := Bot new.
+ 60 timesRepeat: 
+      [ pica go: 70.
+      pica turnLeft: 180.
+      pica go: 70.
+      pica turnLeft: 180.
+      pica turnLeft: 6 ]
+
+
+
+"7-2 Square"
+| pica |
+pica := Bot new.
+4 timesRepeat: 
+     [ pica go: 100.
+     pica turn: 90 ]   
+     
+     
+"7-3 pentagon"
+| pica |
+pica := Bot new.
+5 timesRepeat: 
+    [ pica go: 100.
+    pica turnLeft: 72 ]
+
+"7-4 hexagon"
+| pica |
+pica := Bot new.
+6 timesRepeat: 
+     [ pica go: 100.
+     pica turnLeft: 60 ]
+     
+"7-5 10 ten step"
+| pica |
+pica := Bot new.
+10 timesRepeat: 
+     [ pica north.
+     pica go: 20.
+     pica east.
+     pica go: 20 ].
+10 timesRepeat: 
+     [ pica go: 20.
+     pica south.
+     pica go: 20.
+     pica east ].
+pica west.
+pica go: 400.
+
+
+"7-6"
+| pica |
+pica := Bot new.
+4 timesRepeat: 
+	[ pica go: 50. 
+       pica turnLeft: 90. 
+       pica go: 100. 
+       pica turnRight: 90. 
+       pica go: 100.
+       pica turnRight: 90.
+       pica go: 50 ]
+	
+"7-7 stair"
+	| pica |
+pica := Bot new.
+10 timesRepeat: [ pica go: 10.
+                pica north.
+                pica go: 10.
+                pica east]
+
+
+"7-8"
+| pica |
+	pica := Bot new.
+	10 timesRepeat: [
+                pica go: 10.
+                pica north.
+                pica jump: 10.
+                pica east]
+
+"7-9 Staple"
+| pica |
+pica := Bot new.
+pica north. 
+pica go: 25.
+pica west.
+pica go: 25.
+pica south.
+pica go: 25
+
+
+
+"7-10"
+| pica |
+pica := Bot new.
+8 timesRepeat: 
+    [ pica north. 
+    pica go: 25.
+    pica west.
+    pica go: 25.
+    pica south.
+    pica go: 25 ]
+
+
+"7-12"
+| pica |
+pica := Bot new.
+8 timesRepeat: 
+   [ pica north. 
+   pica go: 25.
+   pica west.
+   pica go: 25.
+   pica south.
+   pica go: 25.
+   pica north.
+   pica jump: 25.
+   pica east.
+   pica jump: 25 ]

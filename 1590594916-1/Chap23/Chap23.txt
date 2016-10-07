@@ -1,0 +1,52 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 23"
+
+stay: n inAtConstantAngle: aRectangle 
+	"The receiver tries to stay in a healthy environment by changing 
+	its speed"
+	   
+	self box: aRectangle.
+	n timesRepeat: 
+	        [ (aRectangle containsPoint: self center)
+	            ifTrue: [self go: 25 atRandom]
+	            ifFalse: [self go: 100 atRandom].
+	        self turn: 25 ]
+
+
+findFoodArea: aFoodRectangle byMoving: move andTurning: angle
+   
+   | food |
+   food := aFoodRectangle center.
+   [(aFoodRectangle containsPoint: self center)
+      or: [self anyButtonPressed]]
+      whileFalse: [((self positionIfGo: move) dist: food) > (self distanceFrom: food)
+            ifTrue: [self turnLeft: angle.
+               ((self positionIfGo: move) dist: food) > (self distanceFrom: food)
+                  ifTrue: [self turnRight: angle * 2]]
+            ifFalse: [self go: move]]
+
+
+	
+keepABearing: aRectangle moving: aDistance turning: anAngle
+    "Move forward the receiver in direction of the center of aRectangle
+    by pointing at this point"
+	
+     [(aRectangle containsPoint: self center) or:
+	      [self anyButtonPressed]]
+	         whileFalse: 
+	            [self pointAt: aRectangle center.
+	            self turn: anAngle. 
+	            self go: aDistance]
+
+
+lookAndFindFoodAt: aRectangle viewRange: viewRange turning: anAngle
+
+  [(aRectangle containsPoint: self center)
+      or: [ self anyButtonPressed]]
+            whileFalse: 
+               [(self angleToPointAt: aRectangle center) abs < (viewRange /2)
+                   ifTrue: [self go: 15]
+                   ifFalse: [self turn: anAngle]]
+

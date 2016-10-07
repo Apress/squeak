@@ -1,0 +1,75 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 21"
+
+"21-1"
+rectangleTopLeft: point1 bottomRight: point2
+
+	self jumpTo: point1.
+	self goTo: point2 x @ point1 y.
+	self goTo: point2.
+	self goTo: point1 x @ point2 y.
+	self goTo: point1
+
+
+"21-2"
+rectangleOrigin: point1 extent: point2
+
+	self jumpTo: point1.
+	self goTo: (point1 x+ point2 x) @ point1 y.
+	self goTo: (point1 x+ point2 x)  @ (point1 y + point2 y).
+	self goTo: point1 x  @ (point1 y + point2 y).
+	self goTo: point1
+
+"21-3"
+
+triangleAt: firstPoint point2: secondPoint point3: thirdPoint	"Bot new triangleAt: 200@300 point2: 200@250 point3: 150@300"	self jumpTo: firstPoint; goTo: secondPoint; goTo: thirdPoint; goTo: firstPoint.
+
+
+"21-4"
+triangleAt: firstPoint delta1: aPoint1 delta2: aPoint2	"Bot new triangleAt: 200@300 delta1: 0@50 delta2: -50@50"	self jumpTo: firstPoint; 		goTo: firstPoint + aPoint1 ; 		goTo: firstPoint + aPoint2 ; goTo: firstPoint.
+
+
+
+"21-5"
+back
+
+	self turn: 180
+
+
+arrow
+
+	| angle |
+	angle := 145.
+	self turnRight: angle.
+	self go: 10.
+	self back.
+	self go: 10.
+	self turnLeft: angle - (180 -angle).
+	self go: 10. 
+	self back.
+	self go: 10.
+	self turnLeft: (180 -angle)
+
+
+arrows
+	8 timesRepeat: 
+		[self go: 100.
+		self arrow.
+		self back.
+		self go: 100.
+		self back.
+		self turnLeft: 45.]
+		
+		
+"21-6"
+"Solution given in the exercise"
+
+
+"21-7"
+"not exactly the solution since I rewrote triangleAt:delta1:delta2:
+instead of triangleAt:point2:point2:"
+"here this shows that having abstraction is good but having adequate abstraction is better. The definition of triangleAt:delta1:delta2: is much simpler than triangleAt2:delta1:delta2:"
+
+triangleAt2: firstPoint delta1: aPoint1 delta2: aPoint2	"Bot new triangleAt2: 200@300 delta1: 0@50 delta2: -50@50"	| point |	self jumpTo: firstPoint; 		translate:  aPoint1.	point := self center.	self goTo: firstPoint; 		translate:  aPoint2 ; 		goTo: point.

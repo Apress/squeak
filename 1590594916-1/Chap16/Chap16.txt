@@ -1,0 +1,134 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 16"
+
+
+centeredSquare: size 
+	"draws a square of size pixels"
+	self turnLeft: 45.
+	self jump: size * 2 sqrt / 2.
+	self turnRight: 135.
+	4
+		timesRepeat: 
+			[self go: size.
+			self turnRight: 90].
+	self turnRight: 45.
+	self jump: size * 2 sqrt / 2.
+
+
+"16-1"
+ripples  | longueur |  longueur := 300.	  5  timesRepeat: [ self centeredSquare: longueur.	          longueur := longueur - 40 ]
+
+"16-2"
+
+corridor	| longueur |	longueur := 300.	10		timesRepeat: 			[self centeredSquare: longueur.			self turnLeft: 45.			longueur := longueur - 30]
+
+"16-3"
+russianSquares		| tmp |	tmp := 10.	10 timesRepeat: 		[self squareL: tmp.		tmp := tmp + 10 ]
+
+
+"16-4"
+constantAngleSpiral: angle	| length |	length := 5.	60 timesRepeat:
+		[ self go: length.		self turnLeft: angle.		length := length + 5 ] 
+		
+"16-5"
+constantAngleSpiralMulti: angle	| length |	length := 5.	60 timesRepeat:
+		[self go: length.		self turnLeft: angle.		length := length * 1.1 ] 
+		
+		
+"16-6"
+spiralSegments: n firstLength: ss lengthIncrement: l constantAngle: angle	"Bot new spiralSegments: 50 firstLength: 10 lengthIncrement: 3 constantAngle: 144"	| length |	length := ss.	n timesRepeat: 
+			[ self go: length.			self turnLeft: angle.			length := length + l ] 
+
+
+"16-7"
+fixedLengthSpiral: size initialAngle: init lengthIncrement: inc times: n	| angle |	angle := init.	n timesRepeat: 
+			[ self go: size.			self turnLeft: angle.			angle := angle + inc ] 
+			
+			
+"16-8"
+"this is challenge for your imagination"
+
+"16-9"
+Bot new spiralSegments: 110 firstLength: 5 lengthIncrement: 3 constantAngle: 178
+
+
+"To get all the golden rectangle"
+
+
+
+
+goldenRectangle: widthSize 
+   "Draw a rectangle with an height 1.6 times longer than widthSize"
+
+   | height |
+   height := widthSize * (1 + 5 sqrt / 2).
+   2 timesRepeat: 
+                  [ self go: widthSize ;
+                          turnLeft: 90 ;
+                          go: height ;
+                          turnLeft: 90 ]
+
+
+
+parallelWidthSegment: size
+   "Draw a parallel segment of length size at the distance of size 
+   regardings the current direction."
+   
+   self turnLeft: 90 ;
+          jump: size ;
+          turnRight: 90 ;
+          go: size
+
+
+goldenRectangle: widthSize atLevel: n 
+   "Draw n + 1 golden rectangles whose bigger one is of widthSize width"
+
+   | currentRectangleWidth |
+    currentRectangleWidth := widthSize.
+    self goldenRectangle: currentRectangleWidth.
+    n timesRepeat:
+            [ self parallelWidthSegment: currentRectangleWidth.
+            self turnLeft: 90.
+            currentRectangleWidth := currentRectangleWidth * (((1 + 5 sqrt) / 2) - 1)]
+
+
+| pica |pica := Bot new.pica goldenRectangle: 50.pica home; east.pica jump: 60.1 to: 4 do: [:i| 	pica goldenRectangle: 50 atLevel: i.	pica home; east.	pica jump: 60 * (i + 1)] 
+
+
+"16-10"
+goldenRectangleIncreasing: widthSize atLevel: n 	"Bot new goldenRectangleIncreasing: 10 atLevel: 5" 	| rectWidth squareSize | 
+	rectWidth := widthSize.  
+	self goldenRectangle: rectWidth.  
+	n timesRepeat: 
+		[ self go: rectWidth.  
+		squareSize := rectWidth * (1 + 5 sqrt / 2).  
+		self go: squareSize.  
+		self turnLeft: 90.  
+		self go: squareSize.  
+		self turnLeft: 90.  
+		self	go: squareSize.  
+		self jump: rectWidth.  
+		self turnLeft: 90.		rectWidth := squareSize]
+
+| pica |pica := Bot new.pica goldenRectangleIncreasing: 10 atLevel: 1.pica home; east.pica jump: 50.pica goldenRectangleIncreasing: 10 atLevel: 2.pica home; east.pica jump: 140.pica goldenRectangleIncreasing: 10 atLevel: 3.pica home; east.pica jump: 230.pica goldenRectangleIncreasing: 10 atLevel: 4.pica home; east.
+
+
+
+"16-11"
+lineOf: n squareWithSize: size 	"Draw a line of n squares of size pixels"	n		timesRepeat: 			[self square: size.			self go: size]
+
+plainstair: base 	"Draw a plain stair"	base		to: 1		by: -1		do: 			[:i | 			self lineOf: i squareWithSize: 20.			self turnLeft: 180.			self go: i * 20.			self turnRight: 90.			self go: 20.			self turnRight: 90]
+
+
+"16-12"
+
+centeredstair: base 	"Draw a plain stair"	base		to: 1		by: -1		do: 			[:i | 			self lineOf: i squareWithSize: 20.			self turnLeft: 180.			self go: i  * 20.			self turnRight: 90.			self go: 20.			self turnRight: 90.			self jump: 10]
+
+
+"16-13 Checkerboard"
+
+
+
+checkerboard: n 	n		timesRepeat: 			[self lineOf: n squareWithSize: 20.			self turnLeft: 180.			self jump: n * 20.			self turnLeft: 90.			self jump: 20.			self turnLeft: 90]

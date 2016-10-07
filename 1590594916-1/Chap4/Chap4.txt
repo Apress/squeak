@@ -1,0 +1,166 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 4"
+
+"Turning Squares...I always thought that you would love to see how to make the first picture...  :)"
+
+"a bit long isn't?"
+| pica |
+pica := Bot new.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica jump: 80.
+pica turnLeft: 15.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica east.
+pica jump: 80.
+pica turnLeft: 25.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica east.
+pica jump: 80.
+pica turnLeft: 35.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica east.
+pica jump: 80.
+pica turnLeft: 45.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90.
+pica go: 50.
+pica turnLeft: 90
+
+"4-2 first square"
+
+| pica |
+pica := Bot new.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+
+"4-3 tilted square"
+
+| pica |
+pica := Bot new.
+pica turnLeft: 33.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+
+"4-4 Broken square"
+
+| pica |
+pica := Bot new.
+pica turnLeft: 33.
+pica go: 100.
+pica north.
+pica go: 100.
+pica west.
+pica go: 100.
+pica south.
+pica go: 100.
+
+"4-8 house"
+| pica |
+pica := Bot new.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 90.
+pica go: 100.
+pica turnLeft: 180.
+pica jump: 100.
+pica turnRight: 90.
+pica jump: 100. 
+pica turnLeft: 120.
+pica go: 100.
+pica turnLeft: 120.
+pica go: 100
+
+"4-9 Pentagon"
+| pica |
+pica := Bot new.
+pica go: 100.
+pica turnLeft: 72.
+pica go: 100.
+pica turnLeft: 72.
+pica go: 100. 
+pica turnLeft: 72.
+pica go: 100.
+pica turnLeft: 72.
+pica go: 100.
+
+"4-10 Hexagon"
+| pica |
+pica := Bot new.
+pica go: 100.
+pica turnLeft: 60.
+pica go: 100.
+pica turnLeft: 60.
+pica go: 100. 
+pica turnLeft: 60.
+pica go: 100.
+pica turnLeft: 60.
+pica go: 100.
+pica turnLeft: 60.
+pica go: 100.
+
+
+"4-11"
+| pica |
+pica := Bot new.
+pica go: 100.
+pica turnLeft: 180.
+pica jump: 100.
+
+pica turnLeft: 60.
+pica go: 100. 
+pica turnLeft: 180.
+pica jump: 100. 
+
+pica turnLeft: 60.
+pica go: 100. 
+
+

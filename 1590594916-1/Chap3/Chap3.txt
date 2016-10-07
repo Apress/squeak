@@ -1,0 +1,127 @@
+"Squeak: Learn Programming with Robots by S. Ducasse
+http://smallwiki.unibe.ch/botsinc/"
+
+"Chapter 3"
+
+"PICA"
+
+| pica |
+pica := Bot new.
+"letter P"
+pica west; jump: 30 ;jump: 100; north.
+pica go: 100; east; go: 100; south; go: 50.
+pica west; go: 100; south ; jump: 50 ; east.
+pica jump: 130.
+"letter I"
+pica north; go: 100; south; jump: 100; east; jump: 30.
+"letter C" 
+pica jump: 100 ; north;  jump: 100 ; west ; go: 100; 
+south; go: 100; east; go: 100; jump: 30.
+"letter A"
+pica north.
+pica go: 100.
+pica east.
+pica go: 100.
+pica south.
+pica go: 100.
+pica north.
+pica go: 50.
+pica west.
+pica go: 100.
+
+
+
+"3.2 SOS"
+|pica|
+pica := Bot new.
+pica go: 10.
+pica jump: 10.
+pica go: 10.
+pica jump: 10.
+pica go: 10.
+pica jump: 20.
+pica go: 30.
+pica jump: 10.
+pica go: 30.
+pica jump: 10.
+pica go: 30.
+pica jump: 20.
+pica go: 10.
+pica jump: 10.
+pica go: 10.
+pica jump: 10.
+pica go: 10.
+
+
+"3-3 Square"
+| pica |
+pica := Bot new.
+pica go: 100.
+pica north.
+pica go: 100.
+pica west.
+pica go: 100.
+pica south.
+pica go: 100
+
+"3-4 StairCase"
+| pica |
+pica := Bot new.
+pica north.
+pica go: 25.
+pica east.
+pica go: 25.
+pica north.
+pica go: 25.
+pica east.
+pica go: 25.
+pica north.
+pica go: 25.
+pica east.
+pica go: 25.
+pica north.
+pica go: 25.
+pica east.
+pica go: 25.
+pica south.
+pica go: 100.
+pica west.
+pica go: 100.
+
+"3-5"
+"Here I'm cheating a bit and using loops"
+| pica |
+pica := Bot new.
+5 timesRepeat: 
+     [ pica north.
+     pica go: 20.
+     pica east.
+     pica go: 20 ].
+5 timesRepeat: 
+     [ pica go: 20.
+     pica south.
+     pica go: 20.
+     pica east ].
+pica west.
+pica go: 200.
+
+
+"3-6"
+|pica|
+pica := Bot new.
+pica go: 100.
+pica turn: 90.
+pica go: 100.
+pica turn: 90.
+pica go: 50.
+pica turn: 90.
+pica go: 50.
+pica turn: 90.
+pica go: 100.
+pica turn: 90.
+pica go: 25.
+pica turn: 90.
+pica go: 25.
+pica turn: 90.
+pica go: 50
+
